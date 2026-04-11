@@ -12,7 +12,9 @@
 | 서울시_상권분석서비스_점포-상권__2024년.csv | 서울 열린데이터광장 | 상권별 업종별 점포수·개폐업률·프랜차이즈 현황 |
 | 서울시_상권분석서비스_직장인구-상권_.csv | 서울 열린데이터광장 | 상권별 직장인구 (성별·연령대) |
 
-> [서울 열린데이터광장](https://data.seoul.go.kr)
+> [상권분석서비스_추정매출-상권]([https://data.seoul.go.kr](https://data.seoul.go.kr/dataList/OA-15572/S/1/datasetView.do))
+> [상권분석서비스_점포-상권]([https://data.seoul.go.kr](https://data.seoul.go.kr/dataList/OA-15577/S/1/datasetView.do))
+> [상권분석서비스_직장인구-상권](https://data.seoul.go.kr/dataList/OA-15569/S/1/datasetView.do)
 
 ## 분석 개요
 

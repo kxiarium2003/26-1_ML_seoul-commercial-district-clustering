@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>readme</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="서울시-상권-유형별-소비-패턴-군집화-분석">서울시 상권 유형별
+소비 패턴 군집화 분석</h1>
+<ul>
+<li><strong>과목</strong>: 26-1 기계학습 HW2 · Kwangwoon Univ.
+Information Convergence</li>
+<li><strong>학번/이름</strong>: 2023510005 김민지</li>
+<li><strong>Github Repository</strong>: <a
+href="https://github.com/kxiarium2003/26-1_ML_seoul-commercial-district-clustering">서울시
+상권 유형별 소비 패턴 군집화 분석</a></li>
+<li><strong>데이터 출처</strong>: 서울 열린데이터광장 (2024년 4분기
+기준)</li>
+<li><strong>분석 단위</strong>: 서울시 상권 1,570개</li>
+<li><strong>Label (y)</strong>: <code>상권_구분_코드_명</code> (골목상권
+/ 발달상권 / 전통시장 / 관광특구)</li>
+</ul>
+<hr />
+<h2 id="목차">목차</h2>
+<ol type="1">
+<li><a href="#1-분석-개요-및-데이터-수집">분석 개요 및 데이터
+수집</a></li>
+<li><a href="#2-데이터-전처리-및-feature-engineering">데이터 전처리 및
+Feature Engineering</a></li>
+<li><a href="#3-군집화-분석">군집화 분석</a>
+<ul>
+<li><a href="#3-1-k-means">3-1. K-Means</a></li>
+<li><a href="#3-2-hierarchical-clustering">3-2. Hierarchical
+Clustering</a></li>
+<li><a href="#3-3-dbscan">3-3. DBSCAN</a></li>
+<li><a href="#3-4-affinity-propagation">3-4. Affinity
+Propagation</a></li>
+<li><a href="#3-5-알고리즘별-성능-비교">3-5. 알고리즘별 성능
+비교</a></li>
+</ul></li>
+<li><a href="#4-군집-결과-분석-및-시각화">군집 결과 분석 및 시각화</a>
+<ul>
+<li><a href="#4-1-pca-2d-시각화">4-1. PCA 2D</a></li>
+<li><a href="#4-2-pca-3d-시각화">4-2. PCA 3D</a></li>
+<li><a href="#4-3-t-sne-시각화">4-3. t-SNE</a></li>
+<li><a href="#4-4-전체-알고리즘-비교-시각화">4-4. 전체 알고리즘
+비교</a></li>
+<li><a href="#4-5-k-means-군집-특성-분석-external-evaluation">4-5.
+K-Means 군집 특성 분석</a></li>
+</ul></li>
+<li><a href="#5-결론-및-한계">결론 및 한계</a></li>
+</ol>
+<hr />
+<h2 id="분석-개요-및-데이터-수집">1. 분석 개요 및 데이터 수집</h2>
+<h3 id="분석-목적">1-1. 분석 목적</h3>
+<p>본 프로젝트는 서울시 내 1,570개 상권의 매출 패턴, 점포 구성, 직장인구
+배후 수요를 통합하여 <strong>소비 행동 기반의 상권 유형을 자동
+분류</strong>하는 것을 목표로 한다. 기존의 행정적 상권
+구분(골목상권/발달상권 등)이 아닌, 실제 데이터에서 드러나는 소비
+시간대·요일·연령대 패턴을 기반으로 상권의 실질적 특성을 군집화한다.
+군집화 알고리즘은 비지도학습이나, 알고리즘의 유효성을 검증하기 위해 행정
+구분 label을 활용한 External Evaluation을 병행한다.</p>
+<h3 id="데이터-이해">1-2. 데이터 이해</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>데이터셋</th>
+<th>원본 크기</th>
+<th>분석 기여</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a
+href="https://data.seoul.go.kr/dataList/OA-15572/S/1/datasetView.do">추정매출-상권</a></td>
+<td>87,179행 × 55열</td>
+<td>요일별/시간대별/성별/연령대별 매출 비율 → 소비 시간대 패턴</td>
+</tr>
+<tr>
+<td><a
+href="https://data.seoul.go.kr/dataList/OA-15577/S/1/datasetView.do">점포-상권</a></td>
+<td>306,889행 × 14열</td>
+<td>프랜차이즈 비율, 개폐업률 → 상권 상업적 밀도·안정성</td>
+</tr>
+<tr>
+<td><a
+href="https://data.seoul.go.kr/dataList/OA-15569/S/1/datasetView.do">직장인구-상권</a></td>
+<td>45,840행 × 26열</td>
+<td>총 직장인구, 성별/연령대 비율 → 배후 수요 특성</td>
+</tr>
+</tbody>
+</table>
+<p><strong>[추정매출-상권]</strong> 55개 컬럼, 87,179행 (상권 × 업종
+단위) - 당월 매출금액/건수, 주중·주말, 요일별(7개), 시간대별(6개),
+성별(2개), 연령대별(6개) 매출</p>
+<p><strong>[점포-상권]</strong> 14개 컬럼, 306,889행 (상권 × 업종 단위)
+- 점포수, 유사업종점포수, 개업률·개업점포수, 폐업률·폐업점포수,
+프랜차이즈점포수</p>
+<p><strong>[직장인구-상권]</strong> 26개 컬럼, 45,840행 (상권 × 분기
+단위) - 총직장인구, 남/여, 연령대별(6개), 성별×연령대별(12개)
+직장인구</p>
+<p><strong>분석 전략</strong>: 2024년 4분기(20244) 기준으로 필터 후,
+상권 단위로 집계하여 <strong>1,570개 상권</strong>을 관측치로 분석</p>
+<hr />
+<p><strong>최종 분석 데이터: 1,570개 관측치 × 30개 feature</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>변수명</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>당월_매출_금액</td>
+<td>상권 전체 월 추정매출 (log 변환)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>주중_매출_비율</td>
+<td>당월 매출 중 평일(월~금) 매출 비중</td>
+</tr>
+<tr>
+<td>3</td>
+<td>주말_매출_비율</td>
+<td>당월 매출 중 주말(토·일) 매출 비중</td>
+</tr>
+<tr>
+<td>4~10</td>
+<td>월·화·수·목·금·토·일_매출_비율</td>
+<td>요일별 매출 비중 (7개)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>시간대_00~06_비율</td>
+<td>심야(자정~새벽 6시) 매출 비중</td>
+</tr>
+<tr>
+<td>12</td>
+<td>시간대_06~11_비율</td>
+<td>오전(6~11시) 매출 비중</td>
+</tr>
+<tr>
+<td>13</td>
+<td>시간대_11~14_비율</td>
+<td>점심(11~14시) 매출 비중</td>
+</tr>
+<tr>
+<td>14</td>
+<td>시간대_14~17_비율</td>
+<td>오후(14~17시) 매출 비중</td>
+</tr>
+<tr>
+<td>15</td>
+<td>시간대_17~21_비율</td>
+<td>저녁(17~21시) 매출 비중</td>
+</tr>
+<tr>
+<td>16</td>
+<td>시간대_21~24_비율</td>
+<td>야간(21~24시) 매출 비중</td>
+</tr>
+<tr>
+<td>17</td>
+<td>여성_매출_비율</td>
+<td>당월 매출 중 여성 소비자 비중</td>
+</tr>
+<tr>
+<td>18~23</td>
+<td>연령대_10/20/30/40/50/60이상_비율</td>
+<td>연령대별 매출 비중 (6개)</td>
+</tr>
+<tr>
+<td>24</td>
+<td>점포_수</td>
+<td>상권 내 전체 점포 수 (log 변환)</td>
+</tr>
+<tr>
+<td>25</td>
+<td>프랜차이즈_비율</td>
+<td>전체 점포 중 프랜차이즈 점포 비중</td>
+</tr>
+<tr>
+<td>26</td>
+<td>개업_비율</td>
+<td>전체 점포 대비 신규 개업 점포 비중</td>
+</tr>
+<tr>
+<td>27</td>
+<td>폐업_비율</td>
+<td>전체 점포 대비 폐업 점포 비중</td>
+</tr>
+<tr>
+<td>28</td>
+<td>총_직장_인구_수</td>
+<td>상권 내 직장 인구 수 (log 변환)</td>
+</tr>
+<tr>
+<td>29</td>
+<td>직장_여성_비율</td>
+<td>직장인구 중 여성 비중</td>
+</tr>
+<tr>
+<td>30</td>
+<td>직장_2030_비율</td>
+<td>직장인구 중 20·30대 비중</td>
+</tr>
+</tbody>
+</table>
+<h3 id="label-분포">1-3. Label 분포</h3>
+<table>
+<thead>
+<tr>
+<th>상권 구분</th>
+<th>상권 수</th>
+<th>비율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>골목상권</td>
+<td>1,035</td>
+<td>65.9%</td>
+</tr>
+<tr>
+<td>전통시장</td>
+<td>280</td>
+<td>17.8%</td>
+</tr>
+<tr>
+<td>발달상권</td>
+<td>249</td>
+<td>15.9%</td>
+</tr>
+<tr>
+<td>관광특구</td>
+<td>6</td>
+<td>0.4%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>골목상권이 전체의 약 2/3를 차지하는 <strong>클래스 불균형</strong>
+구조이며, 이는 서울 상권 생태계의 실제 현실을 반영한다. 이 불균형은 이후
+군집화 성능 해석에 중요한 맥락으로 작용한다.</p>
+</blockquote>
+<p><img src="/Images/df_sales.png" alt="추정매출-상권" /> <img
+src="/Images/df_store.png" alt="점포-상권" /> <img
+src="/Images/df_work.png" alt="직장인구-상권" /></p>
+<hr />
+<h2 id="데이터-전처리-및-feature-engineering">2. 데이터 전처리 및
+Feature Engineering</h2>
+<h3 id="상권-단위-집계">2-1. 상권 단위 집계</h3>
+<p>원본 데이터는 <strong>상권 × 업종</strong> 단위이므로,
+<code>상권_코드</code> 기준으로 수치형 변수를 합산하여 상권 단위 분석
+테이블로 변환하였다.</p>
+<figure>
+<img src="Images/2_1_aggregation.png"
+alt="상권단위 분석 테이블로 merge 결과" />
+<figcaption aria-hidden="true">상권단위 분석 테이블로 merge
+결과</figcaption>
+</figure>
+<h3 id="비율-변수-생성-feature-engineering-핵심">2-2. 비율 변수 생성
+(Feature Engineering 핵심)</h3>
+<p>절대 매출금액을 그대로 사용하면 매출 규모가 큰 발달상권·관광특구에
+군집화 결과가 지배된다. 이를 방지하기 위해 매출의 구성 비율(패턴)에
+집중하는 방향으로 변수를 재설계하였다.</p>
+<p><span class="math display">$$\text{주중\_매출\_비율} =
+\frac{\text{주중\_매출\_금액}}{\text{당월\_매출\_금액}}, \quad
+\text{프랜차이즈\_비율} =
+\frac{\text{프랜차이즈\_점포\_수}}{\text{점포\_수}}$$</span></p>
+<p>이를 통해 상권의 절대적 규모가 아닌 소비 패턴 자체를 feature로
+정의하였다.</p>
+<h3 id="로그-변환-log-transformation">2-3. 로그 변환 (Log
+Transformation)</h3>
+<p><code>당월_매출_금액</code>, <code>점포_수</code>,
+<code>총_직장_인구_수</code>는 소수의 대형 상권이 분포 꼬리를 형성하는
+Right-skewed 분포를 보인다. <code>log1p</code> 변환으로 분포를
+정규분포에 근사시켜 거리 기반 알고리즘의 스케일 왜곡을 방지하였다.</p>
+<h3 id="결측치-처리">2-4. 결측치 처리</h3>
+<p>직장인구 데이터와 매칭되지 않는 상권(6개)은 해당 변수를 0으로
+대체하였으며, 당월 매출금액이 0인 상권(데이터 미집계)은 분석에서
+제외하였다.</p>
+<figure>
+<img src="Images/2_4_merge.png" alt="merge" />
+<figcaption aria-hidden="true">merge</figcaption>
+</figure>
+<h3 id="표준화-standardscaler">2-5. 표준화 (StandardScaler)</h3>
+<p>K-Means, DBSCAN 등 거리 기반 알고리즘은 변수 간 스케일 차이에
+민감하다. 따라서 StandardScaler를 적용하여 전체 30개 feature를 평균 0,
+표준편차 1로 정규화하였다.</p>
+<h3 id="최종-feature-구성-30개">2-6. 최종 Feature 구성 (30개)</h3>
+<table>
+<thead>
+<tr>
+<th>변수 그룹</th>
+<th>개수</th>
+<th>대표 변수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>매출 규모</td>
+<td>1</td>
+<td>당월_매출_금액 (log)</td>
+</tr>
+<tr>
+<td>주중/주말 비율</td>
+<td>2</td>
+<td>주중_매출_비율, 주말_매출_비율</td>
+</tr>
+<tr>
+<td>요일별 비율</td>
+<td>7</td>
+<td>월요일~일요일_매출_비율</td>
+</tr>
+<tr>
+<td>시간대별 비율</td>
+<td>6</td>
+<td>00~06시 ~ 21~24시 매출_비율</td>
+</tr>
+<tr>
+<td>성별 비율</td>
+<td>1</td>
+<td>여성_매출_비율</td>
+</tr>
+<tr>
+<td>연령대별 비율</td>
+<td>6</td>
+<td>10대~60대이상_매출_비율</td>
+</tr>
+<tr>
+<td>점포 현황</td>
+<td>4</td>
+<td>점포_수(log), 프랜차이즈·개업·폐업 비율</td>
+</tr>
+<tr>
+<td>직장인구</td>
+<td>3</td>
+<td>총_직장_인구_수(log), 여성·2030 비율</td>
+</tr>
+</tbody>
+</table>
+<p>※ 남성/여성 매출 비율은 합산 시 항상 1이 되는 완전 상관관계이므로,
+정보 중복을 피하기 위해 <code>여성_매출_비율</code> 1개만
+사용하였다.</p>
+<p><img src="Images/2_6_describe1.png" /> <img
+src="Images/2_6_describe2.png" /></p>
+<hr />
+<h2 id="군집화-분석">3. 군집화 분석</h2>
+<h3 id="k-means">3-1. <span
+class="math inline"><em>K</em></span>-Means</h3>
+<p><span class="math inline"><em>K</em></span>=2~10 범위에서 SSE(Elbow
+Method)와 Silhouette Score를 동시에 탐색하였다.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th><span class="math inline"><em>K</em></span></th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Silhouette</td>
+<td>0.1100</td>
+<td>0.0887</td>
+<td>0.0781</td>
+<td>0.0595</td>
+<td>0.0650</td>
+<td>0.0688</td>
+<td>0.0614</td>
+<td>0.0648</td>
+<td>0.0470</td>
+</tr>
+</tbody>
+</table>
+<p>SSE 그래프에서 뚜렷한 elbow가 나타나지 않았으며, Silhouette Score도
+전반적으로 낮은 수준을 보였다. 이는 두 가지 구조적 원인에 기인한다.</p>
+<ol type="1">
+<li><strong>클래스 불균형</strong>: 골목상권 66%로 인해 단일 거대
+클러스터가 지배적</li>
+<li><strong>차원의 저주 (Curse of Dimensionality)</strong>: 30차원
+공간에서 유클리드 거리가 평준화되어 군집 간 경계가 흐릿해지는 현상</li>
+</ol>
+<p>그러나 이는 알고리즘의 실패가 아니다. 서울 상권 생태계의 66%가
+골목상권이라는 현실이 <strong>데이터에 충실히 반영된 결과</strong>이며,
+Silhouette Score와 실제 label 클래스 수(4개)를 종합 고려하여
+<strong><span class="math inline"><em>K</em></span>=4</strong>를 최종
+선택하였다.</p>
+<ul>
+<li><strong>SSE</strong>: 37,735.39</li>
+<li><strong>Silhouette Score</strong>: 0.0781</li>
+</ul>
+<h4 id="sse-37735.39-해석">SSE 37,735.39 해석</h4>
+<pre><code>SSE는 각 관측치와 자신이 속한 군집 중심(centroid) 간 거리 제곱합이다. 절대값 자체는 feature 수와 표준화 스케일에 비례하므로, 30개 feature × 1,570개 관측치 규모에서 이 수치가 크게 나타나는 것은 자연스럽다. 해석의 핵심은 절대값이 아니라 K 증가에 따른 SSE 감소 폭이며, 본 데이터에서 뚜렷한 elbow 없이 완만하게 감소한 것은 군집 간 경계가 모호한 데이터 구조를 반영한다.</code></pre>
+<h4 id="silhouette-score-0.0781-해석">Silhouette Score 0.0781 해석</h4>
+<pre><code>Silhouette Score는 −1~1 범위이며, 1에 가까울수록 군집 내 응집도가 높고 군집 간 분리가 명확하다. 일반적으로 0.5 이상이면 양호, 0.25~0.5는 약한 구조, 0.25 미만은 군집 구조가 불분명한 것으로 해석된다. 0.0781은 낮은 수치이나, 골목상권 66% 불균형과 30차원 거리 평준화를 감안하면 데이터의 구조적 한계가 반영된 결과이다. 양수 값이 나온 것 자체가 완전한 무작위보다는 의미 있는 패턴을 포착했음을 뜻한다.</code></pre>
+<h4 id="군집-크기-및-실제-label-대응">군집 크기 및 실제 label 대응</h4>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>군집</th>
+<th>크기</th>
+<th>주요 구성 상권</th>
+<th>해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cluster 0</td>
+<td>260</td>
+<td>골목상권 다수</td>
+<td>주중·점심 집중 → 오피스 밀착형 골목상권</td>
+</tr>
+<tr>
+<td>Cluster 1</td>
+<td>350</td>
+<td>골목상권 + 전통시장</td>
+<td>주말·야간 강세 → 주거지 배후 여가형</td>
+</tr>
+<tr>
+<td>Cluster 2</td>
+<td>633</td>
+<td>골목상권 최다</td>
+<td>전 시간대 고른 분포, 매출 규모 최대 → 핵심 발달상권</td>
+</tr>
+<tr>
+<td>Cluster 3</td>
+<td>327</td>
+<td>전통시장 + 관광특구 포함</td>
+<td>심야·야간 특화 → 야간·관광형</td>
+</tr>
+</tbody>
+</table>
+<p>K-Means가 행정 구분과 완전히 일치하지 않는 것은 당연하다. 하나의
+군집에 여러 행정 구분이 혼재하는 것은, 행정 구분이 실제 소비 패턴을
+완전히 포착하지 못함을 보여주는 결과이기도 하다.</p>
+<p><img src="Outputs/plot_kmeans_tuning.png" /> <img
+src="Images/3_1_kmeans_result.png" /></p>
+<hr />
+<h3 id="hierarchical-clustering">3-2. Hierarchical Clustering</h3>
+<p>Ward, Complete, Average 세 가지 linkage를 <span
+class="math inline"><em>K</em></span>=4 기준으로 비교하였다. Linkage는
+계층적 군집화에서 두 군집 간 거리를 측정하는 방식으로, 선택에 따라
+군집의 형태와 크기 분포가 크게 달라진다.</p>
+<ul>
+<li><strong>Ward</strong>: 두 군집을 합쳤을 때 SSE(군집 내 분산)가
+얼마나 증가하는지를 거리로 사용. 군집 크기가 균형 잡히는 경향이 있어
+일반적으로 가장 많이 사용된다.</li>
+<li><strong>Complete</strong>: 두 군집에서 가장 멀리 있는 두 점 사이의
+거리를 기준으로 사용. 촘촘하고 컴팩트한 군집을 만드는 경향이 있다.</li>
+<li><strong>Average</strong>: 두 군집의 모든 점 쌍 간 거리의 평균을
+기준으로 사용. 아래에서 설명하듯, Silhouette 계산 방식과 척도가 동일하여
+수치가 inflate될 수 있다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Linkage</th>
+<th>Silhouette</th>
+<th>군집 크기 분포</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ward</td>
+<td>0.0575</td>
+<td>716 / 425 / 211 / 218 (균형)</td>
+</tr>
+<tr>
+<td>complete</td>
+<td>0.7133</td>
+<td>1 / 1,566 / 1 / 2 (극단 불균형)</td>
+</tr>
+<tr>
+<td>average</td>
+<td>0.7134</td>
+<td>1 / 1,566 / 1 / 2 (극단 불균형)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Average/Complete linkage의 Silhouette 0.71은 수치적
+왜곡(Metric Inflation)이다.</strong> Silhouette <span
+class="math inline"><em>S</em>(<em>i</em>)</span>는 아래와 같이 평균
+거리 기반으로 정의된다.</p>
+<p><span class="math display">$$S(i) = \frac{b(i) - a(i)}{\max(a(i),\
+b(i))}$$</span></p>
+<p>여기서 <span class="math inline"><em>a</em>(<em>i</em>)</span>는 동일
+군집 내 평균 거리, <span
+class="math inline"><em>b</em>(<em>i</em>)</span>는 가장 가까운 타
+군집까지의 평균 거리이다. Average linkage가 동일한 평균 거리를
+최적화하므로 이 척도에서 인위적으로 높은 수치가 산출된다. 실제 군집
+구조를 확인하면 1,566개 상권이 단일 군집으로 쏠려 있어 분류 능력이
+전무하다.</p>
+<p>Ward linkage(0.0575)는 군집 크기가 균형 있게 배분되고 PCA 2D
+시각화에서 군집 간 분리가 명확하여 분석적으로 더 유의미한 결과를
+제공한다.</p>
+<p><img src="Outputs/plot_dendrogram.png" /> <img
+src="Images/3_2_linkage_compare1.png" /> <img
+src="Images/3_2_linkage_compare2.png" /> <img
+src="Outputs/plot_hier_ward_vs_average.png" /></p>
+<hr />
+<h3 id="dbscan">3-3. DBSCAN</h3>
+<p>k-NN 거리 그래프(<span class="math inline"><em>k</em></span>=5)를
+통해 <span class="math inline"><em>ϵ</em></span> 후보를 파악하고, <span
+class="math inline"><em>ϵ</em></span>(1.5~3.5) ×
+<code>min_samples</code>(3~10) 그리드 탐색을 수행하였다.</p>
+<table>
+<thead>
+<tr>
+<th><span class="math inline"><em>ϵ</em></span></th>
+<th>min_samples</th>
+<th>n_clusters</th>
+<th>noise_ratio</th>
+<th>Silhouette</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.0</td>
+<td>3</td>
+<td>9</td>
+<td>0.845</td>
+<td>-0.2946</td>
+</tr>
+<tr>
+<td>3.0</td>
+<td>3</td>
+<td>2</td>
+<td>0.416</td>
+<td>0.0688</td>
+</tr>
+<tr>
+<td>3.5</td>
+<td>3</td>
+<td>2</td>
+<td>0.278</td>
+<td>0.1452</td>
+</tr>
+<tr>
+<td><strong>3.5</strong></td>
+<td><strong>4</strong></td>
+<td><strong>1</strong></td>
+<td><strong>0.285</strong></td>
+<td><strong>-</strong></td>
+</tr>
+</tbody>
+</table>
+<p>모든 파라미터 조합에서 노이즈 비율이 최소 27.8%로 높게 나타났다. 최종
+선택한 <span class="math inline"><em>ϵ</em></span>=3.5,
+<code>min_samples</code>=4에서 유효 군집 수가 1로 수렴하였다.</p>
+<p><strong>이는 서울 상권 데이터가 DBSCAN이 전제하는 명확한 밀도 경계를
+갖지 않는 구조임을 의미한다.</strong> 골목상권 1,035개가 서울 전역에
+연속적으로 분포하여 고밀도 클러스터를 형성하지 않으며, 이는 알고리즘
+실패가 아닌 데이터의 분포적 특성을 알고리즘이 정확히 포착한
+결과이다.</p>
+<ul>
+<li>군집 수: 1 (노이즈 448개 / Cluster 0 1,122개)</li>
+<li>노이즈 비율: 0.285</li>
+</ul>
+<p><img src="Outputs/plot_kdistance.png" /> <img
+src="Images/3_3_dbscan_grid.png" /><br />
+<img src="Images/3_3_dbscan_result.png" /></p>
+<hr />
+<h3 id="affinity-propagation">3-4. Affinity Propagation</h3>
+<p>AP는 데이터 포인트끼리 “나를 exemplar(대표점)로 삼아라” / “나는 너를
+지지한다”는 메시지를 반복 교환하며 수렴하는 알고리즘이다. 두 핵심
+하이퍼파라미터는 다음과 같다.</p>
+<ul>
+<li><strong>Damping</strong>: 메시지 업데이트 시 이전 값과 현재 값을
+혼합하는 비율(<span class="math inline">0.5</span>~<span
+class="math inline">1.0</span>). 값이 높을수록 변화를 천천히 반영하여
+수렴 안정성이 높아지나 군집 수가 줄어드는 경향이 있다.</li>
+<li><strong>Preference</strong>: 각 포인트가 스스로 exemplar가 될
+가능성을 조절하는 값. 0에 가까울수록 군집 수가 많아지고, 음수 절댓값이
+클수록 exemplar 경쟁이 억제되어 군집 수가 줄어든다. AP는 <span
+class="math inline"><em>K</em></span>처럼 군집 수를 직접 지정할 수
+없으므로 preference를 통해 간접 조절한다.</li>
+</ul>
+<p>500개 샘플에 대해 damping(0.5~0.9)을 탐색한 결과 최적
+<code>damping</code>=0.7을 선택하였다. 이후 전체 1,570개 데이터에 대해
+<code>preference</code>를 변화시키며 군집 수를 조절하였다. 또한 AP는
+<span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span> 시간
+복잡도를 가지므로, 탐색 단계에서 전체 1,570개 대신 500개 샘플로
+<code>damping</code>을 먼저 탐색한 뒤 전체 데이터에 적용하였다.</p>
+<table>
+<thead>
+<tr>
+<th>preference</th>
+<th>n_clusters</th>
+<th>Silhouette</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-200</td>
+<td>32</td>
+<td>0.0272</td>
+</tr>
+<tr>
+<td>-150</td>
+<td>43</td>
+<td>0.0203</td>
+</tr>
+<tr>
+<td>-100</td>
+<td>60</td>
+<td>0.0257</td>
+</tr>
+<tr>
+<td>-75</td>
+<td>85</td>
+<td>0.0234</td>
+</tr>
+<tr>
+<td>-50</td>
+<td>140</td>
+<td>0.0263</td>
+</tr>
+<tr>
+<td>-30</td>
+<td>243</td>
+<td>0.0336</td>
+</tr>
+</tbody>
+</table>
+<p>유효 군집 수 범위(2~20)를 달성하는 <code>preference</code>가 존재하지
+않아, 최소 군집 기준으로 <strong><code>preference</code>=-200 (<span
+class="math inline"><em>n</em></span>=32)</strong> 을 채택하였다. AP는
+모든 데이터 포인트가 exemplar 후보가 되는 알고리즘 특성상 데이터 밀도가
+불균일한 본 데이터셋에서 과도한 세분화 경향을 보였다.</p>
+<p><img src="Images/3_4_ap_damping.png" /><br />
+<img src="Images/3_4_ap_preference.png" /></p>
+<hr />
+<h3 id="알고리즘별-성능-비교">3-5. 알고리즘별 성능 비교</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>알고리즘</th>
+<th>주요 하이퍼파라미터</th>
+<th>군집 수</th>
+<th>SSE</th>
+<th>Silhouette</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><span
+class="math inline"><em>K</em></span>-Means</strong></td>
+<td><span class="math inline"><em>K</em></span>=4</td>
+<td><strong>4</strong></td>
+<td>37,735.39</td>
+<td><strong>0.0781</strong></td>
+</tr>
+<tr>
+<td>Hierarchical</td>
+<td>linkage=average</td>
+<td>4</td>
+<td>-</td>
+<td>0.7134 ※</td>
+</tr>
+<tr>
+<td>DBSCAN</td>
+<td><span class="math inline"><em>ϵ</em></span>=3.5, min_samples=4</td>
+<td>1</td>
+<td>-</td>
+<td>- †</td>
+</tr>
+<tr>
+<td>Affinity Propagation</td>
+<td>damping=0.7, preference=-200</td>
+<td>32</td>
+<td>-</td>
+<td>0.0272</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>※ SSE는 군집 중심(centroid)이 명시적으로 정의된 <span
+class="math inline"><em>K</em></span>-Means에서만 산출 가능하다.
+Hierarchical, DBSCAN, AP는 centroid를 정의하지 않으므로 SSE 계산 대상이
+아니다.</p>
+<p>※ Average linkage의 Silhouette 0.7134는 1,566개 상권이 단일 군집으로
+쏠리는 극단적 불균형에서 발생한 Metric Inflation으로, 실질적인 군집 분류
+능력이 없다. Ward linkage(<span
+class="math inline"><em>S</em></span>=0.0575)가 균형 있는 분할과
+시각적으로 유의미한 분리를 제공하여 분석 목적에 더 적합하다.</p>
+<p>※ DBSCAN Silhouette은 유효 군집 수가 2개 이상이어야 계산 가능하다. 본
+분석에서 유효 군집이 1개로 수렴하였으므로 계산 불가이며, 노이즈
+포인트(-1)는 Silhouette 계산 대상에서도 제외된다.</p>
+</blockquote>
+<p><img src="Images/3_5_comparison.png" /></p>
+<hr />
+<h2 id="군집-결과-분석-및-시각화">4. 군집 결과 분석 및 시각화</h2>
+<h3 id="pca-2d-시각화">4-1. PCA 2D 시각화</h3>
+<p>30개 feature를 PCA로 2차원 축소하여 실제 label 및 <span
+class="math inline"><em>K</em></span>-Means 군집 결과를 비교하였다. 실제
+label 기준으로 <strong>관광특구와 발달상권은 비교적 분리된
+영역</strong>에 위치하나, 골목상권과 전통시장은 상당 부분 겹쳐 있다.
+이는 두 유형이 규모 차이는 있지만 소비 패턴의 본질적 차이가 크지 않음을
+시사한다.</p>
+<p><img src="Outputs/plot_pca2d.png" /></p>
+<hr />
+<h3 id="pca-3d-시각화">4-2. PCA 3D 시각화</h3>
+<p>3차원으로 확장 시 누적 설명 분산이 증가하며, <strong>관광특구 6개
+상권이 뚜렷하게 격리된 위치</strong>에 투영된다. 이는 관광특구가 매출
+규모와 야간 시간대 비율에서 다른 상권과 본질적으로 다른 특성을 가짐을 3D
+공간에서 시각적으로 확인한 것이다.</p>
+<p><img src="Outputs/plot_pca3d.png" /></p>
+<hr />
+<h3 id="t-sne-시각화">4-3. t-SNE 시각화</h3>
+<p>t-SNE(<code>perplexity</code>=30)는 PCA의 선형 투영과 달리 비선형
+다양체 구조를 보존하므로 국소적 군집 패턴을 더 잘 드러낸다. 시각화 결과
+<span class="math inline"><em>K</em></span>-Means 군집들이 t-SNE
+공간에서 유의미하게 응집되어 있으며, PCA에서 겹쳐 보이던 골목상권 내부도
+어느 정도 분리된 구조가 확인된다.</p>
+<p><img src="Outputs/plot_tsne.png" /></p>
+<hr />
+<h3 id="전체-알고리즘-비교-시각화-pca-2d">4-4. 전체 알고리즘 비교 시각화
+(PCA 2D)</h3>
+<p>네 알고리즘의 군집 결과를 PCA 2D 공간에 나란히 시각화하였다. <span
+class="math inline"><em>K</em></span>-Means와 Ward Hierarchical은 유사한
+공간적 분할 패턴을 보인 반면, DBSCAN은 단일 군집 + 노이즈 구조로
+수렴하였고, AP는 32개로 과도하게 세분화된 패턴을 보였다.</p>
+<p><img src="Outputs/plot_all_comparison.png" /></p>
+<hr />
+<h3 id="k-means-군집-특성-분석-external-evaluation">4-5. <span
+class="math inline"><em>K</em></span>-Means 군집 특성 분석 (External
+Evaluation)</h3>
+<p><strong>군집 vs. 실제 상권 구분 크로스탭</strong></p>
+<p><img src="Outputs/plot_kmeans_heatmap.png" /></p>
+<p><strong>군집별 소비 패턴 프로파일 및 페르소나</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>군집</th>
+<th>페르소나</th>
+<th>주요 특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cluster 0</strong></td>
+<td>오피스 밀착형</td>
+<td>주중 매출 비율 0.890 (최고), 점심 시간대(11~14시) 0.338 (최고),
+월~금 강세</td>
+</tr>
+<tr>
+<td><strong>Cluster 1</strong></td>
+<td>여가·유흥형</td>
+<td>주말 매출 비율 0.316, 저녁<sub>심야(17</sub>24시) 강세, 토·일 매출
+높음</td>
+</tr>
+<tr>
+<td><strong>Cluster 2</strong></td>
+<td>핵심 발달상권</td>
+<td>당월 매출금액 23.059 (최고), 전 시간대 고른 매출, 프랜차이즈
+밀집</td>
+</tr>
+<tr>
+<td><strong>Cluster 3</strong></td>
+<td>야간·관광 특화</td>
+<td>새벽 시간대(00~06시) 비율 0.071 (최고), 야간 매출 강세, 관광특구
+포함</td>
+</tr>
+</tbody>
+</table>
+<p><strong>군집 구분의 핵심 변수</strong>: 주중 매출 비율이 Cluster
+0(0.890) vs Cluster 1(0.684) 간 가장 큰 차이를 보여, 동일한 ‘골목상권’
+행정 구분 안에서도 오피스형과 유흥형을 정량적으로 분리하는 핵심 지표로
+확인되었다.</p>
+<p><img src="Images/4_5_cluster_profile.png" /> <img
+src="Outputs/plot_feature_importance.png" /></p>
+<hr />
+<h2 id="결론-및-한계">5. 결론 및 한계</h2>
+<h3 id="결론">결론</h3>
+<p><strong>본 분석은 행정적 편의에 의해 구분된 서울시 상권 분류가 실제
+소비자의 시공간적 패턴을 충분히 반영하지 못함을 정량적으로
+검증하였다.</strong> <span
+class="math inline"><em>K</em></span>-Means(<span
+class="math inline"><em>K</em></span>=4)가 가장 해석 가능한 군집 구조를
+제공하였으며, 주중/주말 매출 비율과 시간대별 매출 분포가 상권 유형을
+구분하는 핵심 변수로 확인되었다.</p>
+<p>특히 동일한 ‘골목상권’ 행정 구분 안에서 ’오피스 밀착형(Cluster 0)’과
+’여가·유흥형(Cluster 1)’이 명확히 분리된 점은, 데이터 기반 군집화가 행정
+구분보다 상권의 실제 기능을 더 정확히 포착함을 보여준다. 이는 서울시
+상권 활성화 정책 수립 시, 단순 행정 구분이 아닌 <strong>소비 패턴 기반의
+맞춤형 지원 전략</strong>의 필요성을 시사한다.</p>
+<h3 id="한계-및-향후-과제">한계 및 향후 과제</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>한계</th>
+<th>원인</th>
+<th>향후 방향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>낮은 Silhouette Score</td>
+<td>골목상권 66% 클래스 불균형, 30차원 차원의 저주</td>
+<td>SMOTE 등 오버샘플링, PCA 전처리 후 군집화</td>
+</tr>
+<tr>
+<td>DBSCAN 군집화 수렴</td>
+<td>상권의 연속적 밀도 구조</td>
+<td>HDBSCAN 등 계층적 밀도 기반 알고리즘 적용</td>
+</tr>
+<tr>
+<td>AP 과분할</td>
+<td>exemplar 기반 알고리즘의 특성, <span
+class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span>
+복잡도</td>
+<td>Mini-batch <span class="math inline"><em>K</em></span>-Means,
+Spectral Clustering 비교</td>
+</tr>
+<tr>
+<td>직장인구 일부 결측</td>
+<td>6개 상권 데이터 미매칭</td>
+<td>유동인구 데이터 추가 활용</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="실행-방법">실행 방법</h2>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install scikit-learn pandas numpy matplotlib seaborn scipy</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 데이터 파일을 Data/ 폴더에 위치시킨 후</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook Clustering.ipynb</span></code></pre></div>
+<h2 id="파일-구조">파일 구조</h2>
+<pre><code>ML_HW2_seoul-commercial-district-clustering/
+├── Data/                              # CSV 데이터 파일 (gitignore)
+│   ├── 서울시_상권분석서비스(추정매출-상권)_2024년.csv
+│   ├── 서울시_상권분석서비스(점포-상권)_2024년.csv
+│   └── 서울시_상권분석서비스(직장인구-상권)_2024년.csv
+│
+├── Outputs/                           # 코드 실행으로 생성된 plot PNG
+│   ├── plot_kmeans_tuning.png         # Elbow + Silhouette 그래프
+│   ├── plot_dendrogram.png            # Ward linkage Dendrogram
+│   ├── plot_hier_ward_vs_average.png  # Ward vs Average PCA 비교
+│   ├── plot_kdistance.png             # k-dist graph
+│   ├── plot_pca2d.png                 # PCA 2D 시각화
+│   ├── plot_pca3d.png                 # PCA 3D 시각화
+│   ├── plot_tsne.png                  # t-SNE 시각화
+│   ├── plot_all_comparison.png        # 전체 알고리즘 비교
+│   ├── plot_kmeans_heatmap.png        # K-Means 히트맵
+│   └── plot_feature_importance.png    # Feature 기여도 barh
+│
+├── Images/                            # 보고서 삽입용 스크린샷
+│   ├── df_store/sales/work.png        # 각 데이터셋 shape + head(5)
+│   ├── 2_1_aggregation.png            # 상권 단위 집계 결과
+│   ├── 2_4_merge.png                  # 병합 결과 + 결측값
+│   ├── 2_6_describe1/2.png            # 최종 feature 구성 및 X shape
+│   ├── 3_1_kmeans_result.png          # K-Means 최종 결과 출력
+│   ├── 3_2_linkage_compare1/2.png     # linkage별 Silhouette + 크로스탭
+│   ├── 3_3_dbscan_grid.png            # 그리드 탐색 결과 표
+│   ├── 3_3_dbscan_result.png          # DBSCAN 최종 결과
+│   ├── 3_4_ap_damping.png             # damping 탐색 표
+│   ├── 3_4_ap_preference.png          # preference 루프 결과
+│   ├── 3_5_comparison.png             # 알고리즘 성능 비교 표
+│   └── 4_5_cluster_profile.png        # 군집별 feature 평균 표
+│
+├── Clustering.ipynb
+├── README.md
+└── .gitignore</code></pre>
+</body>
+</html>
